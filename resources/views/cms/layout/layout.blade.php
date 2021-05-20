@@ -97,8 +97,8 @@
                 <!-- User Info -->
                 <div class="user-info">
                     <div class="info-container">
-                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sample Name</div>
-                        <div class="email">example@example.com</div>
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $userName }}</div>
+                        <div class="email">{{ $userEmail }}</div>
                     </div>
                 </div>
                 <!-- #User Info -->
