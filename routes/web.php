@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 
@@ -21,6 +23,8 @@ Route::get('/', function () {
 });
 
 Route::get('/cms/dashboard', [DashboardController::class, 'index']);
+Route::get('/cms/posts/posts', [PostsController::class, 'index']);
+
 Route::get('/signin', [AuthController::class, 'signin']);
 Route::get('/callback', [AuthController::class, 'callback']);
 Route::get('/signout', [AuthController::class, 'signout']);
