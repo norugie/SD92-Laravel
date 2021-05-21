@@ -88,7 +88,7 @@ class AuthController extends Controller
         
         $tokenCache = new TokenCache();
         $tokenCache->storeTokens($accessToken, $user);
-      
+        
         return redirect('/cms/dashboard');
       }
       catch (League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {

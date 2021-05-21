@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\AuthController;
@@ -22,9 +21,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cms/dashboard', [DashboardController::class, 'index']);
-Route::get('/cms/posts/posts', [PostsController::class, 'index']);
+Route::get('/error', function () {
+    return view('error');
+});
 
 Route::get('/signin', [AuthController::class, 'signin']);
 Route::get('/callback', [AuthController::class, 'callback']);
 Route::get('/signout', [AuthController::class, 'signout']);
+
+Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function (){
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+
+    Route::group(['prefix' => 'posts'], function() {
+        Route::get('/posts', [PostsController::class, 'index']);
+    });
+});

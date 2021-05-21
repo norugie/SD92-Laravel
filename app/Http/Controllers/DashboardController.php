@@ -9,7 +9,6 @@ class DashboardController extends Controller
 {
     public function index ()
     {
-        $viewData = $this->loadViewData();
-        return view ( 'cms.dashboard.dashboard', $viewData );
+        return view ( 'cms.dashboard.dashboard' );
     }
 }
