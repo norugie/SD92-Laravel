@@ -46,7 +46,7 @@ class AuthController extends Controller
     }
 
     if (!isset($providedState) || $expectedState != $providedState) {
-      return redirect('/cms/dashboard')
+      return redirect('/error')
         ->with('error', 'Invalid auth state')
         ->with('errorDetail', 'The provided auth state did not match the expected value');
     }
@@ -92,13 +92,13 @@ class AuthController extends Controller
         return redirect('/cms/dashboard');
       }
       catch (League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
-        return redirect('/cms/dashboard')
+        return redirect('/error')
           ->with('error', 'Error requesting access token')
           ->with('errorDetail', $e->getMessage());
       }
     }
 
-    return redirect('/cms/dashboard')
+    return redirect('/error')
       ->with('error', $request->query('error'))
       ->with('errorDetail', $request->query('error_description'));
   }
