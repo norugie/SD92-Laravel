@@ -97,8 +97,8 @@
                 <!-- User Info -->
                 <div class="user-info">
                     <div class="info-container">
-                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $user->userName }}</div>
-                        <div class="email">{{ $user->userEmail }}</div>
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $data->userName }}</div>
+                        <div class="email">{{ $data->userEmail }}</div>
                     </div>
                 </div>
                 <!-- #User Info -->
@@ -321,7 +321,7 @@
             <div class="container-fluid">
                 @yield ( 'notice' )
                 <div class="block-header">
-                    <h2>MAIN CONTENT PAGE NAME</h2>
+                    <h2>{{ strtoupper($data->pageSection) }} @isset($data->pageSubSection) {{ " - " . strtoupper($data->pageSubSection) }} @endisset</h2>
                 </div>
 
                 <!-- Page Content -->
