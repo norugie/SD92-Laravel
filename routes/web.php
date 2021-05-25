@@ -33,6 +33,8 @@ Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function (){
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
     Route::group(['prefix' => 'posts'], function() {
-        Route::get('/posts', [PostController::class, 'index']);
+        Route::get('/posts', [PostController::class, 'postsPostsIndex']);
+        Route::get('/links', [PostController::class, 'postsLinksIndex']);
+        Route::get('/categories', [PostController::class, 'postsCategoriesIndex']);
     });
 });
