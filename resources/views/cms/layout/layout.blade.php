@@ -125,13 +125,13 @@
                                     </a>
                                 </li>
                                 <li id="links" class="{{ Request::is( 'cms/posts/links' ) ? 'active' : '' }}">
-                                    <a href="" class="waves-effect waves-block">
+                                    <a href="/cms/posts/links" class="waves-effect waves-block">
                                         <i class="material-icons">link</i>
                                         <span>Links</span>
                                     </a>
                                 </li>
                                 <li id="categories" class="{{ Request::is( 'cms/posts/categories' ) ? 'active' : '' }}">
-                                    <a href="" class="waves-effect waves-block">
+                                    <a href="/cms/posts/categories" class="waves-effect waves-block">
                                         <i class="material-icons">widgets</i>
                                         <span>Categories</span>
                                     </a>
