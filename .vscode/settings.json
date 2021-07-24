@@ -1,0 +1,4 @@
+{
+    "html.format.wrapAttributesIndentSize": 4,
+    "prettier.useTabs": true
+}
