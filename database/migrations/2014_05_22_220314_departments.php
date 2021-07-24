@@ -119,7 +119,7 @@ class Departments extends Migration
                 [
                     'department_abbv' => 'GCC',
                     'department_name' => 'Gitginsaa Childcare Centre',
-                    'department_addr' => NULL,
+                    'department_addr' => 'No address given',
                     'department_email' => 'gcc@nisgaa.bc.ca',
                     'department_phone' => '+1 (778) 961 0091',
                     'department_fax' => NULL,
@@ -128,7 +128,7 @@ class Departments extends Migration
                 [
                     'department_abbv' => 'SS',
                     'department_name' => 'Strong Start',
-                    'department_addr' => NULL,
+                    'department_addr' => 'No address given',
                     'department_email' => NULL,
                     'department_phone' => NULL,
                     'department_fax' => NULL,
@@ -137,7 +137,7 @@ class Departments extends Migration
                 [
                     'department_abbv' => 'NLC',
                     'department_name' => 'Nisga\'a Language and Culture',
-                    'department_addr' => NULL,
+                    'department_addr' => 'No address given',
                     'department_email' => NULL,
                     'department_phone' => NULL,
                     'department_fax' => NULL,
