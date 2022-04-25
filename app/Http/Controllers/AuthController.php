@@ -111,8 +111,14 @@ class AuthController extends Controller
                     $department = 5;
                 else if ($user->getDepartment() === "NESS")
                     $department = 6;
-                else
-                    $department = 2;
+                else {
+                    if (in_array('gccmanager', $gs))
+                        $department = 11;
+                    else if (in_array('nlcmanager', $gs))
+                        $department = 13;
+                    else
+                        $department = 2;
+                }
 
                 // Upsert user into the users table
                 DB::table('users')
