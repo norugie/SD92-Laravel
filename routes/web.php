@@ -11,9 +11,11 @@ use App\Http\Controllers\UserController;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
+| Web routes for the SD92 District Website(s). These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group.
+| Please refrain from rearranging the order of the routes as it
+| could affect some of the functionalities.
 |
 */
 
@@ -33,8 +35,10 @@ Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function (){
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
     Route::group(['prefix' => 'posts'], function() {
-        Route::get('/posts', [PostController::class, 'postsPostsIndex']);
-        Route::get('/links', [PostController::class, 'postsLinksIndex']);
-        Route::get('/categories', [PostController::class, 'postsCategoriesIndex']);
+        Route::controller('PostController')->group(function (){
+            Route::get('/posts', 'postsPostsIndex');
+            Route::get('/links', 'postsLinksIndex');
+            Route::get('/categories', 'postsCategoriesIndex');
+        }); 
     });
 });
