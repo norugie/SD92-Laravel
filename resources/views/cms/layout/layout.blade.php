@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-            <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-            <title>Dasboard | SD92 - Nisga'a</title>
-            <!-- Favicon-->
-            <link rel="icon" href="/nisgaa-icon.png" type="image/x-icon">
-        
-            <!-- Google Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-        
-            <!-- Bootstrap Core Css -->
-            <link href="/cms/plugins/bootstrap-v4/css/bootstrap.css" rel="stylesheet">
-        
-            <!-- Waves Effect Css -->
-            <link href="/cms/plugins/node-waves/waves.css" rel="stylesheet" />
-        
-            <!-- Animation Css -->
-            <link href="/cms/plugins/animate-css/animate.css" rel="stylesheet" />
-        
-            <!-- Bootstrap DatePicker Css -->
-            <link href="/cms/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
-        
-            <!-- Sweetalert Css -->
-            <link href="/cms/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
-        
-            <!-- Bootstrap Select Css -->
-            <link href="/cms/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-        
-            <!-- JQuery DataTable Css -->
-            <link href="/cms/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
-        
-            <!-- FullCalendar Css -->
-            <link href='/cms/plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
-        
-            <!-- Custom Css -->
-            <link href="/cms/css/style.css" rel="stylesheet">
-            <link href="/cms/css/themes/theme-blue-grey.css" rel="stylesheet" />
-            <link href="/cms/css/custom-backend.css" rel="stylesheet">
-        
-            <!-- Jquery Core Js -->
-            <script src="/cms/plugins/jquery/jquery.min.js"></script>
-        
-            <!-- Jquery Validation Plugin Css -->
-            <script src="/cms/plugins/jquery-validation/jquery.validate.js"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>Dasboard | SD92 - Nisga'a</title>
+        <!-- Favicon-->
+        <link rel="icon" href="/nisgaa-icon.png" type="image/x-icon">
+    
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    
+        <!-- Bootstrap Core Css -->
+        <link href="/cms/plugins/bootstrap-v4/css/bootstrap.css" rel="stylesheet">
+    
+        <!-- Waves Effect Css -->
+        <link href="/cms/plugins/node-waves/waves.css" rel="stylesheet" />
+    
+        <!-- Animation Css -->
+        <link href="/cms/plugins/animate-css/animate.css" rel="stylesheet" />
+    
+        <!-- Bootstrap DatePicker Css -->
+        <link href="/cms/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+    
+        <!-- Sweetalert Css -->
+        <link href="/cms/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    
+        <!-- Bootstrap Select Css -->
+        <link href="/cms/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    
+        <!-- JQuery DataTable Css -->
+        <link href="/cms/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    
+        <!-- FullCalendar Css -->
+        <link href='/cms/plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+    
+        <!-- Custom Css -->
+        <link href="/cms/css/style.css" rel="stylesheet">
+        <link href="/cms/css/themes/theme-blue-grey.css" rel="stylesheet" />
+        <link href="/cms/css/custom-backend.css" rel="stylesheet">
+        @yield('custom-css')
+
+        <!-- Jquery Core Js -->
+        <script src="/cms/plugins/jquery/jquery.min.js"></script>
+
+        <!-- Popper Plugin Js -->
+        <script src="/cms/plugins/popper/popper.js"></script>
+
+        <!-- Jquery Validation Plugin Css -->
+        <script src="/cms/plugins/jquery-validation/jquery.validate.js"></script>
     </head>
     <body class="theme-blue-grey">
         <!-- CMS Content -->
@@ -329,9 +332,7 @@
         <!-- END - Main Content -->
 
         <!-- Page Footer -->
-        <!-- Popper Plugin Js -->
-        <script src="/cms/plugins/popper/popper.js"></script>
-
+        
         <!-- Bootstrap Core Js -->
         <script src="/cms/plugins/bootstrap-v4/js/bootstrap.js"></script>
 
