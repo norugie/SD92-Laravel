@@ -50,6 +50,10 @@ function alertDesign(e) {
         showDisablePolicyConfirm(id, name);
     } else if (type === 'reopen-policy'){
         showReactivatePolicyConfirm(id, name);
+    } else if (type === 'delete-policy-ssd'){
+        showDisablePolicyConfirmSSD(id, name);
+    } else if (type === 'reopen-policy-ssd'){
+        showReactivatePolicyConfirmSSD(id, name);
     } else if (type === 'delete-plan'){
         showDisablePlanConfirm(id, name);
     } else if (type === 'reopen-plan'){
@@ -516,6 +520,45 @@ function showReactivatePolicyConfirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/district.php?district=true&policyReactivate=true&id=" + id + "&policyName=" + name;
+        }
+
+    });
+}
+
+//Warning for disabling policy
+function showDisablePolicyConfirmSSD(id, name) {
+    swal({
+        title: "Are you sure you want to disable this policy?",
+        text: "You will be able to reactivate this policy once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/interaction.php?interaction=true&policyDisable=true&id=" + id + "&policyName=" + name;
+        }
+
+    });
+}
+
+//Warning for reactivating policy
+function showReactivatePolicyConfirmSSD(id, name) {
+    swal({
+        title: "Are you sure you want to reactivate this policy?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/interaction.php?interaction=true&policyReactivate=true&id=" + id + "&policyName=" + name;
         }
 
     });

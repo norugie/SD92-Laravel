@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Dasboard | SD92 - Nisga'a</title>
-        <!-- Favicon-->
-        <link rel="icon" href="/nisgaa-icon.png" type="image/x-icon">
-
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-
-        <!-- Bootstrap Core Css -->
-        <link href="/cms/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-        <!-- Waves Effect Css -->
-        <link href="/cms/plugins/node-waves/waves.css" rel="stylesheet" />
-
-        <!-- Animation Css -->
-        <link href="/cms/plugins/animate-css/animate.css" rel="stylesheet" />
-
-        <!-- Bootstrap DatePicker Css -->
-        <link href="/cms/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
-
-        <!-- Sweetalert Css -->
-        <link href="/cms/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
-
-        <!-- Bootstrap Select Css -->
-        <link href="/cms/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-
-        <!-- JQuery DataTable Css -->
-        <link href="/cms/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
-
-        <!-- FullCalendar Css -->
-        <link href='/cms/plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
-
-        <!-- Custom Css -->
-        <link href="/cms/css/style.css" rel="stylesheet">
-        <link href="/cms/css/themes/theme-blue-grey.css" rel="stylesheet" />
-        <link href="/cms/css/custom-backend.css" rel="stylesheet">
-
-        <!-- Jquery Core Js -->
-        <script src="/cms/plugins/jquery/jquery.min.js"></script>
-
-        <!-- Jquery Validation Plugin Css -->
-        <script src="/cms/plugins/jquery-validation/jquery.validate.js"></script>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+            <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+            <title>Dasboard | SD92 - Nisga'a</title>
+            <!-- Favicon-->
+            <link rel="icon" href="/nisgaa-icon.png" type="image/x-icon">
+        
+            <!-- Google Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+        
+            <!-- Bootstrap Core Css -->
+            <link href="/cms/plugins/bootstrap-v4/css/bootstrap.css" rel="stylesheet">
+        
+            <!-- Waves Effect Css -->
+            <link href="/cms/plugins/node-waves/waves.css" rel="stylesheet" />
+        
+            <!-- Animation Css -->
+            <link href="/cms/plugins/animate-css/animate.css" rel="stylesheet" />
+        
+            <!-- Bootstrap DatePicker Css -->
+            <link href="/cms/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+        
+            <!-- Sweetalert Css -->
+            <link href="/cms/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+        
+            <!-- Bootstrap Select Css -->
+            <link href="/cms/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+        
+            <!-- JQuery DataTable Css -->
+            <link href="/cms/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+        
+            <!-- FullCalendar Css -->
+            <link href='/cms/plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+        
+            <!-- Custom Css -->
+            <link href="/cms/css/style.css" rel="stylesheet">
+            <link href="/cms/css/themes/theme-blue-grey.css" rel="stylesheet" />
+            <link href="/cms/css/custom-backend.css" rel="stylesheet">
+        
+            <!-- Jquery Core Js -->
+            <script src="/cms/plugins/jquery/jquery.min.js"></script>
+        
+            <!-- Jquery Validation Plugin Css -->
+            <script src="/cms/plugins/jquery-validation/jquery.validate.js"></script>
     </head>
     <body class="theme-blue-grey">
         <!-- CMS Content -->
@@ -76,16 +77,11 @@
         <nav class="navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                     <a href="javascript:void(0);" class="bars"></a>
-                    <a class="navbar-brand" href="/">SD92 - NISGA'A CMS</a>
+                    <a class="navbar-brand" href="/">SD92 - NISGA'A USER MANAGER</a>
                 </div>
-                <div class="collapse navbar-collapse" id="navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Logout -->
-                        <li><a href="/signout"><i class="material-icons">input</i></a></li>
-                        <!-- END - Logout -->
-                    </ul>
+                <div class="navbar-signout">
+                    <a href="/signout" class="signout"><i class="material-icons">input</i></a>
                 </div>
             </div>
         </nav>
@@ -333,8 +329,11 @@
         <!-- END - Main Content -->
 
         <!-- Page Footer -->
+        <!-- Popper Plugin Js -->
+        <script src="/cms/plugins/popper/popper.js"></script>
+
         <!-- Bootstrap Core Js -->
-        <script src="/cms/plugins/bootstrap/js/bootstrap.js"></script>
+        <script src="/cms/plugins/bootstrap-v4/js/bootstrap.js"></script>
 
         <!-- Slimscroll Plugin Js -->
         <script src="/cms/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
@@ -370,6 +369,7 @@
         <script src="/cms/js/dialogs.js"></script>
         <script src="/cms/js/edit.js"></script>
         <script src="/cms/js/custom.js"></script>
+
         <!-- END - Page Footer -->
     </body>
 </html>
