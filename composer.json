@@ -10,7 +10,6 @@
     "require": {
         "php": "^8.0",
         "codedge/laravel-fpdf": "^1.8",
-        "directorytree/ldaprecord-laravel": "^2.3",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^9.0",
