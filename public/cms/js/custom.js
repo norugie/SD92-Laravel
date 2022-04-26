@@ -1,16 +1,12 @@
 (function() {
     // Custom JS DataTable
     $('#post_table').DataTable({
-        "bSort": true,
-        'aaSorting': [
-            [0, 'desc']
-        ],
+        "bSort": false,
         "lengthChange": false,
         "iDisplayLength": 10,
         "columnDefs": [{
             "targets": [6],
             "searchable": false,
-            "orderable": false,
             "visible": true
         }]
     });
