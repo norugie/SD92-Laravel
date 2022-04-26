@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('post_slug');
             $table->string('post_title');
-            $table->string('post_date');
+            $table->enum('post_type', ['Post', 'Media'])->default('Post');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('department_id')->constrained();
             $table->string('post_thumbnail')->default('post_thumbnail.jpg');
@@ -25,8 +25,12 @@ class CreatePostsTable extends Migration
             $table->longText('post_content')->nullable();
             $table->enum('post_social', ['No', 'Yes'])->default('No');
             $table->enum('post_ssd', ['No', 'Yes'])->default('No');
+            $table->enum('post_ss', ['No', 'Yes'])->default('No');
+            $table->enum('post_gcc', ['No', 'Yes'])->default('No');
+            $table->enum('post_nlc', ['No', 'Yes'])->default('No');
             $table->enum('post_status', ['Active', 'Archived']);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

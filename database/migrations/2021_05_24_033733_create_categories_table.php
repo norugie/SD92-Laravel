@@ -18,7 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->string('cat_slug');
             $table->string('cat_name');
             $table->enum('cat_status', ['Active', 'Archived']);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

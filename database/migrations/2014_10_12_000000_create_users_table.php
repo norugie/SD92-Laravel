@@ -21,8 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->foreignId('role_id')->constrained();
             $table->foreignId('department_id')->constrained();
-            $table->rememberToken();
-            $table->timestamps();
+            $table->enum('status', ['Active', 'Archived']);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
