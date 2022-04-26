@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\TokenStore\TokenCache;
 use Microsoft\Graph\Graph;
 use Microsoft\Graph\Model;
+use App\Models\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -121,8 +121,7 @@ class AuthController extends Controller
                 }
 
                 // Upsert user into the users table
-                DB::table('users')
-                ->updateOrInsert(
+                User::updateOrInsert(
                     [
                         'username' => str_replace("@nisgaa.bc.ca", "", $user->getMail()),
                         'firstname' => $user->getGivenname(),
