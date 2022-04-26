@@ -20,4 +20,19 @@ class User extends Authenticatable
         'name',
         'email',
     ];
+
+    public function department ()
+    {
+        return $this->belongsTo(Department::class);
+    }
+
+    public function role ()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function posts ()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
