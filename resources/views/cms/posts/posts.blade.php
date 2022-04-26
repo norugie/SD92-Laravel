@@ -43,52 +43,35 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <tr>
-                                    <td>Sample Title</td>
-                                    <td>News Post</td>
-                                    <td>Rugie Ann Barrameda</td>
-                                    <td>SDO</td>
-                                    <td>Important<br>School District</td>
-                                    <td>15 Mar 2022 - Tuesday</td>
-                                    <td>
-                                        <center>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="material-icons">more_horiz</i><span>OPTIONS</span> <span class="caret"></span>
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">View Post</a>
-                                                    <a class="dropdown-item" href="#">Update Post Details</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#">Delete Post</a>
+                                @foreach($posts as $post)
+                                    <tr>
+                                        <td>{{ $post->post_title }}</td>
+                                        <td>{{ $post->post_type }}</td>
+                                        <td>{{ $post->user->firstname }} {{ $post->user->lastname }}</td>
+                                        <td>{{ $post->department->department_abbv }}</td>
+                                        <td>
+                                            @foreach($post->categories as $category)
+                                                {{ $category->cat_name }}<br>
+                                            @endforeach
+                                        </td>
+                                        <td>{{ $post->created_at->format( 'M d, Y' ) }}</td>
+                                        <td>
+                                            <center>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="material-icons">more_horiz</i><span>OPTIONS</span> <span class="caret"></span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">View Post</a>
+                                                        <a class="dropdown-item" href="#">Update Post Details</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="#">Delete Post</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </center>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sample Title</td>
-                                    <td>News Post</td>
-                                    <td>Rugie Ann Barrameda</td>
-                                    <td>SDO</td>
-                                    <td>Important<br>School District</td>
-                                    <td>15 Mar 2022 - Tuesday</td>
-                                    <td>
-                                        <center>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="material-icons">more_horiz</i><span>OPTIONS</span> <span class="caret"></span>
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">View Post</a>
-                                                    <a class="dropdown-item" href="#">Update Post Details</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#">Delete Post</a>
-                                                </div>
-                                            </div>
-                                        </center>
-                                    </td>
-                                </tr>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -12,13 +12,11 @@ class PostController extends Controller
 {
     public function postsPostsIndex ()
     {
-        $posts = Post::orderBy('post_date')->get();
+        $posts = Post::all()->sortByDesc('id');
 
-        dd($posts);
-
-        // return view ( 'cms.posts.posts', [
-        //     'posts' => $posts
-        // ]);
+        return view ( 'cms.posts.posts', [
+            'posts' => $posts
+        ]);
     }
 
     public function postsLinksIndex ()
