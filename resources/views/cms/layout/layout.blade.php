@@ -117,7 +117,7 @@
                                 <span>Posts</span>
                             </a>
                             <ul class="ml-menu">
-                                <li id="posts" class="{{ Request::is( 'cms/posts/posts' ) ? 'active' : '' }}">
+                                <li id="posts" class="{{ Request::is( 'cms/posts/posts' ) || Request::is( 'cms/posts/posts/*' ) ? 'active' : '' }}">
                                     <a href="/cms/posts/posts" class="waves-effect waves-block">
                                         <i class="material-icons">mode_comment</i>
                                         <span>District Posts</span>
