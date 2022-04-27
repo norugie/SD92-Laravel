@@ -11,30 +11,30 @@
         }]
     });
 
-    // Custom JS Bootstrap DatePicker
-    $('#bs_datepicker_range_container_new').datepicker({
-        autoclose: true,
-        container: '#bs_datepicker_range_container_new',
-        todayHighlight: true,
-        startDate: '0d',
-        format: 'dd M yyyy'
-    });
+    // // Custom JS Bootstrap DatePicker
+    // $('#bs_datepicker_range_container_new').datepicker({
+    //     autoclose: true,
+    //     container: '#bs_datepicker_range_container_new',
+    //     todayHighlight: true,
+    //     startDate: '0d',
+    //     format: 'dd M yyyy'
+    // });
 
-    $('#bs_datepicker_range_container_edit').datepicker({
-        autoclose: true,
-        container: '#bs_datepicker_range_container_edit',
-        todayHighlight: true,
-        startDate: '0d',
-        format: 'dd M yyyy'
-    });
+    // $('#bs_datepicker_range_container_edit').datepicker({
+    //     autoclose: true,
+    //     container: '#bs_datepicker_range_container_edit',
+    //     todayHighlight: true,
+    //     startDate: '0d',
+    //     format: 'dd M yyyy'
+    // });
 
-    $('#bs_datepicker_range_container_event').datepicker({
-        autoclose: true,
-        container: '#bs_datepicker_range_container_event',
-        todayHighlight: true,
-        startDate: '0d',
-        format: 'dd M yyyy'
-    });
+    // $('#bs_datepicker_range_container_event').datepicker({
+    //     autoclose: true,
+    //     container: '#bs_datepicker_range_container_event',
+    //     todayHighlight: true,
+    //     startDate: '0d',
+    //     format: 'dd M yyyy'
+    // });
 
     // Custom JQuery Validator
     $('.new_form_validate').validate({
