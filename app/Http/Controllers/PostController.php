@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    // Posts
     public function postsPostsIndex ()
     {
         $posts = Post::all()->sortByDesc('id');
@@ -19,13 +20,20 @@ class PostController extends Controller
         ]);
     }
 
-    public function postsLinksIndex ()
+    public function postsCreateNewPost ()
     {
-        return view ( 'cms.posts.links' );
+        return view ( 'cms.posts.create.posts' );
     }
 
+    // Categories
     public function postsCategoriesIndex ()
     {
         return view ( 'cms.posts.categories' );
+    }
+
+    // Links
+    public function postsLinksIndex ()
+    {
+        return view ( 'cms.posts.links' );
     }
 }
