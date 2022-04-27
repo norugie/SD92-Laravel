@@ -13,28 +13,28 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
     
         <!-- Bootstrap Core Css -->
-        <link href="/cms/plugins/bootstrap-v4/css/bootstrap.css" rel="stylesheet">
+        <link href="/plugins/bootstrap-v4/css/bootstrap.css" rel="stylesheet">
     
         <!-- Waves Effect Css -->
-        <link href="/cms/plugins/node-waves/waves.css" rel="stylesheet" />
+        <link href="/plugins/node-waves/waves.css" rel="stylesheet" />
     
         <!-- Animation Css -->
-        <link href="/cms/plugins/animate-css/animate.css" rel="stylesheet" />
+        <link href="/plugins/animate-css/animate.css" rel="stylesheet" />
     
         <!-- Bootstrap DatePicker Css -->
-        <link href="/cms/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+        <link href="/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
     
         <!-- Sweetalert Css -->
-        <link href="/cms/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+        <link href="/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
     
         <!-- Bootstrap Select Css -->
-        <link href="/cms/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+        <link href="/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
     
         <!-- JQuery DataTable Css -->
-        <link href="/cms/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+        <link href="/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
     
         <!-- FullCalendar Css -->
-        <link href='/cms/plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+        <link href='/plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
     
         <!-- Custom Css -->
         <link href="/cms/css/style.css" rel="stylesheet">
@@ -43,13 +43,13 @@
         @yield('custom-css')
 
         <!-- Jquery Core Js -->
-        <script src="/cms/plugins/jquery/jquery.min.js"></script>
+        <script src="/plugins/jquery/jquery.min.js"></script>
 
         <!-- Popper Plugin Js -->
-        <script src="/cms/plugins/popper/popper.js"></script>
+        <script src="/plugins/popper/popper.js"></script>
 
         <!-- Jquery Validation Plugin Css -->
-        <script src="/cms/plugins/jquery-validation/jquery.validate.js"></script>
+        <script src="/plugins/jquery-validation/jquery.validate.js"></script>
     </head>
     <body class="theme-blue-grey">
         <!-- CMS Content -->
@@ -334,36 +334,36 @@
         <!-- Page Footer -->
         
         <!-- Bootstrap Core Js -->
-        <script src="/cms/plugins/bootstrap-v4/js/bootstrap.js"></script>
+        <script src="/plugins/bootstrap-v4/js/bootstrap.js"></script>
 
         <!-- Slimscroll Plugin Js -->
-        <script src="/cms/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
         <!-- Waves Effect Plugin Js -->
-        <script src="/cms/plugins/node-waves/waves.js"></script>
+        <script src="/plugins/node-waves/waves.js"></script>
 
         <!-- SweetAlert Plugin Js -->
-        <script src="/cms/plugins/sweetalert/sweetalert.min.js"></script>
+        <script src="/plugins/sweetalert/sweetalert.min.js"></script>
 
         <!-- Jquery DataTable Plugin Js -->
-        <script src="/cms/plugins/jquery-datatable/jquery.dataTables.js"></script>
-        <script src="/cms/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-        <script src="/cms/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-        <script src="/cms/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-        <script src="/cms/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-        <script src="/cms/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-        <script src="/cms/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-        <script src="/cms/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-        <script src="/cms/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+        <script src="/plugins/jquery-datatable/jquery.dataTables.js"></script>
+        <script src="/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+        <script src="/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+        <script src="/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+        <script src="/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+        <script src="/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+        <script src="/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+        <script src="/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+        <script src="/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
 
         <!-- Select Plugin Js -->
-        <script src="/cms/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+        <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
         <!-- Bootstrap Datepicker Plugin Js -->
-        <script src="/cms/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+        <script src="/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
         <!-- Validation Plugin Js -->
-        <script src="/cms/plugins/jquery-validation/jquery.validate.js"></script>
+        <script src="/plugins/jquery-validation/jquery.validate.js"></script>
 
         <!-- Custom Js -->
         <script src="/cms/js/admin.js"></script>
