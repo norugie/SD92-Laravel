@@ -1,29 +1,12 @@
 @extends ( 'cms.layout.layout' )
 
 @section ( 'custom-css' )
-    <style>
-
-        div.token-input-dropdown-facebook {           
-            z-index: 9999!important;
-            width: 1020px;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" id="u0" href="/plugins/tinymce/skins/lightgray/skin.min.css">
 @endsection
 
 @section ( 'custom-js' )
-    <script>
-        (function () {
-            'use strict';
-            $('input[name=post_opt_type]:radio').click(function(ev) {
-                if (ev.currentTarget.value == 'Post') {
-                    $('.dropzone-area').hide();
-                } else if (ev.currentTarget.value == 'Media') {
-                    $('.dropzone-area').show();
-                }
-            });
-        })();
-    </script>
+    <script src="/plugins/tinymce/tinymce.min.js"></script>
+    <script src="/cms/js/editors.js"></script>
 @endsection
 
 @section ( 'content' )
@@ -32,12 +15,12 @@
         <div class="card">
             <div class="header">
                 <div class="row clearfix">
-                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-xs-sm-center">
                         <h4>NEW POST</h4>      
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <center>
-                            <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=posts'"><i class="material-icons">list</i><span>LIST</span></button>
+                            <a href="/cms/posts/posts" type="button" class="btn bg-blue waves-effect" style="display: inline-block;"><i class="material-icons">list</i><span>LIST</span></a>
                         </center>
                     </div>
                 </div>
@@ -66,44 +49,6 @@
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="post_categories" name="post_categories" required>
                                         </div>
-                                        {{-- <script type="text/javascript">
-                                            
-                                            var categories = new Array();
-                                            
-                                            Array.prototype.remove = function() {
-                                                var what, a = arguments, L = a.length, ax;
-                                                while (L && this.length) {
-                                                    what = a[--L];
-                                                    while ((ax = this.indexOf(what)) !== -1) {
-                                                        this.splice(ax, 1);
-                                                    }
-                                                }
-                                                return this;
-                                            };
-                                            
-                                            $(document).ready(function() {
-                                                $("#post_categories").tokenInput(<?php echo $cats; ?>, {
-                                                    theme: "facebook",
-                                                    propertyToSearch: "cat_desc",
-                                                    resultsFormatter: function(item){ 
-                                                        return "<li>" + "<div style='display: inline-block; padding-left: 10px;'><div class='cat_desc'>" + item.cat_desc + "</div></div></li>" },
-                                                    tokenFormatter: function(item){ 
-                                                        return "<li><p>" + item.cat_desc + "</p></li>" },
-                                                    preventDuplicates: true,
-                                                    onAdd: function(item){
-                                                        categories.push(item.id);
-                                                        console.log(categories);
-                                                        $('input[name="post_categories_id"]').val(categories);
-                                                    },
-                                                    onDelete: function(item){
-                                                        categories.remove(item.id);
-                                                        console.log(categories);
-                                                        $('input[name="post_categories_id"]').val(categories);
-                                                    }
-                                                });
-                                            });
-                                        </script> --}}
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="row clearfix">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="post_ssd_autopost">Post on School District Superintendent Page?</label>
                                     <div class="demo-radio-button">
                                         <input type="radio" name="post_ssd_autopost" id="ssd_opt_1" class="radio-col-blue-grey with-gap" value="No" checked>
@@ -129,20 +74,18 @@
                                         <label for="ssd_opt_2">Yes</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="post_ss_autopost">Post on SD92 Strong Start?</label>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="post_nlc_autopost">Post on Nisga'a Language and Culture?</label>
                                     <div class="demo-radio-button">
-                                        <input type="radio" name="post_ss_autopost" id="ss_opt_1" class="radio-col-blue-grey with-gap" value="No" checked>
-                                        <label for="ss_opt_1">No</label>
-                                        <input type="radio" name="post_ss_autopost" id="ss_opt_2" class="radio-col-blue-grey with-gap" value="Yes">
-                                        <label for="ss_opt_2">Yes</label>
+                                        <input type="radio" name="post_nlc_autopost" id="nlc_opt_1" class="radio-col-blue-grey with-gap" value="No" checked>
+                                        <label for="nlc_opt_1">No</label>
+                                        <input type="radio" name="post_nlc_autopost" id="nlc_opt_2" class="radio-col-blue-grey with-gap" value="Yes">
+                                        <label for="nlc_opt_2">Yes</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row clearfix">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="post_gcc_autopost">Post on Gitginsaa Childcare Centre?</label>
                                     <div class="demo-radio-button">
                                         <input type="radio" name="post_gcc_autopost" id="gcc_opt_1" class="radio-col-blue-grey with-gap" value="No" checked>
@@ -151,15 +94,13 @@
                                         <label for="gcc_opt_2">Yes</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="post_nlc_autopost">Post on Nisga'a Language and Culture?</label>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="post_ss_autopost">Post on SD92 Strong Start?</label>
                                     <div class="demo-radio-button">
-                                        <input type="radio" name="post_nlc_autopost" id="nlc_opt_1" class="radio-col-blue-grey with-gap" value="No" checked>
-                                        <label for="nlc_opt_1">No</label>
-                                        <input type="radio" name="post_nlc_autopost" id="nlc_opt_2" class="radio-col-blue-grey with-gap" value="Yes">
-                                        <label for="nlc_opt_2">Yes</label>
+                                        <input type="radio" name="post_ss_autopost" id="ss_opt_1" class="radio-col-blue-grey with-gap" value="No" checked>
+                                        <label for="ss_opt_1">No</label>
+                                        <input type="radio" name="post_ss_autopost" id="ss_opt_2" class="radio-col-blue-grey with-gap" value="Yes">
+                                        <label for="ss_opt_2">Yes</label>
                                     </div>
                                 </div>
                             </div>

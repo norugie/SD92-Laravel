@@ -1,8 +1,9 @@
-$(function () {
+$(function() {
     //TinyMCE
     tinymce.init({
         selector: ".tinymce_editor",
         theme: "modern",
+        skin: "lightgray",
         height: 300,
         plugins: [
             'advlist autolink lists link image charmap print preview hr anchor pagebreak',
@@ -14,25 +15,22 @@ $(function () {
         toolbar2: 'print preview | forecolor backcolor emoticons',
         relative_urls: false,
         remove_script_host: false,
-        document_base_url: schoolLink, // Change origin URL once site is online
-        external_filemanager_path:"/filemanager/",
-        filemanager_title:"Responsive Filemanager" ,
-        external_plugins: { "filemanager" : "/filemanager/plugin.min.js"},
+        document_base_url: "localhost:8000", // Change origin URL once site is online
         image_advtab: true,
         images_upload_url: '../functions/upload.php',
         image_class_list: [
-            {title: 'Responsive', value: 'img-responsive img-fluid'}
+            { title: 'Responsive', value: 'img-responsive img-fluid' }
         ],
 
         // Override default upload handler to simulate successful upload
-        images_upload_handler: function (blobInfo, success, failure) {
+        images_upload_handler: function(blobInfo, success, failure) {
             var xhr, formData;
 
             xhr = new XMLHttpRequest();
             xhr.withCredentials = false;
             xhr.open('POST', '../functions/upload.php');
 
-            xhr.onload = function () {
+            xhr.onload = function() {
                 var json;
 
                 if (xhr.status != 200) {
@@ -52,7 +50,7 @@ $(function () {
 
             formData = new FormData();
             formData.append('file', blobInfo.blob(), blobInfo.filename());
-            
+
             xhr.send(formData);
         }
     });
