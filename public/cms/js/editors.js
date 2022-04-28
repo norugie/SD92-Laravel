@@ -2,20 +2,14 @@ $(function() {
     //TinyMCE
     tinymce.init({
         selector: ".tinymce_editor",
-        theme: "modern",
-        skin: "lightgray",
+        theme: "silver",
         height: 300,
-        plugins: [
-            'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-            'searchreplace wordcount visualblocks visualchars code fullscreen',
-            'insertdatetime nonbreaking save table contextmenu directionality',
-            'emoticons paste textcolor colorpicker textpattern imagetools'
-        ],
-        toolbar1: 'undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        toolbar2: 'print preview | forecolor backcolor emoticons',
+        plugins: 'advlist autolink lists link image charmap preview searchreplace wordcount visualblocks visualchars code fullscreen save table directionality',
+        toolbar1: 'undo redo | preview | print | forecolor backcolor | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        removed_menuitems: 'newdocument, nonbreaking, insertdatetime, anchor, pagebreak',
         relative_urls: false,
         remove_script_host: false,
-        document_base_url: "localhost:8000", // Change origin URL once site is online
+        document_base_url: 'localhost:8000', // Change origin URL once site is online
         image_advtab: true,
         images_upload_url: '../functions/upload.php',
         image_class_list: [
