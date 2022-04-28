@@ -1,12 +1,49 @@
 @extends ( 'cms.layout.layout' )
 
 @section ( 'custom-css' )
+    <link rel="stylesheet" type="text/css" id="u0" href="/plugins/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/tinymce/skins/lightgray/skin.min.css">
+    <link rel="stylesheet" type="text/css" id="u0" href="/plugins/bootstrap-tokenfield/dist/css/tokenfield-typeahead.min.css">
+    <link rel="stylesheet" type="text/css" id="u0" href="/plugins/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css">
 @endsection
 
 @section ( 'custom-js' )
     <script src="/plugins/tinymce/tinymce.min.js"></script>
     <script src="/cms/js/editors.js"></script>
+
+    <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/plugins/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js"></script>
+    <script src="/plugins/bootstrap-tokenfield/dist/typeahead.bundle.min.js"></script>
+    <script>
+        var sources = @json($categories->toArray(), JSON_HEX_TAG);
+        var source = [];
+        
+        $(sources).each(function(){
+            source.push({"key": this.id, "value": this.cat_name});
+        });
+
+        var engine = new Bloodhound({
+            local: source,
+            datumTokenizer: function(d) {
+                return Bloodhound.tokenizers.whitespace(d.value);
+            },
+            queryTokenizer: Bloodhound.tokenizers.whitespace
+        });
+
+        engine.initialize();
+
+        $('#post_categories').tokenfield({
+            typeahead: [null, { source: engine.ttAdapter() }]
+        });
+
+        $('#post_categories').on('tokenfield:createtoken', function (event) {
+            var existingTokens = $(this).tokenfield('getTokens');
+            $.each(existingTokens, function(index, token) {
+                if (token.value === event.attrs.value)
+                    event.preventDefault();
+            });
+        });
+    </script>
 @endsection
 
 @section ( 'content' )

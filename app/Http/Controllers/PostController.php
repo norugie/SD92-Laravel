@@ -15,14 +15,14 @@ class PostController extends Controller
     {
         $posts = Post::all()->sortByDesc('id');
 
-        return view ( 'cms.posts.posts', [
-            'posts' => $posts
-        ]);
+        return view ( 'cms.posts.posts', compact('posts'));
     }
 
     public function postsCreateNewPost ()
     {
-        return view ( 'cms.posts.create.posts' );
+        $categories = Category::where('cat_status', 'Active')->get();
+
+        return view ( 'cms.posts.create.posts', compact('categories'));
     }
 
     // Categories
