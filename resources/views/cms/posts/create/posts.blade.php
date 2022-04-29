@@ -19,19 +19,29 @@
         var source = [];
         
         $(sources).each(function(){
-            source.push({"key": this.id, "value": this.cat_name});
+            source.push({"id": this.id, "value": this.cat_name});
         });
+        
+        console.log(source);
+        
+        // var engine = new Bloodhound({
+        //     local: source,
+        //     datumTokenizer: function(d) {
+        //         return Bloodhound.tokenizers.whitespace(d.value);
+        //     },
+        //     queryTokenizer: Bloodhound.tokenizers.whitespace
+        // });
 
-        var engine = new Bloodhound({
-            local: source,
-            datumTokenizer: function(d) {
-                return Bloodhound.tokenizers.whitespace(d.value);
+        // engine.initialize();
+
+        $('#tokenfield').tokenfield({
+            autocomplete: {
+                source: source,
+                delay: 100
             },
-            queryTokenizer: Bloodhound.tokenizers.whitespace
+            showAutocompleteOnFocus: true
         });
-
-        engine.initialize();
-
+        
         $('#post_categories').tokenfield({
             typeahead: [null, { source: engine.ttAdapter() }]
         });
@@ -66,7 +76,8 @@
                 <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <form class="new_form_validate" action="../functions/post.php?post=true&addPostIntegrated=true" method="POST" enctype="multipart/form-data">
+                        <form class="new_form_validate" action="/cms/posts/posts/create" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="post_title">Post Title *</label>

@@ -18,11 +18,16 @@ class PostController extends Controller
         return view ( 'cms.posts.posts', compact('posts'));
     }
 
-    public function postsCreateNewPost ()
+    public function postsCreateNewPostPage ()
     {
         $categories = Category::where('cat_status', 'Active')->get();
 
         return view ( 'cms.posts.create.posts', compact('categories'));
+    }
+
+    public function postsCreateNewPost (Request $request)
+    {
+        dd($request);
     }
 
     // Categories
