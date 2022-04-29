@@ -7023,7 +7023,8 @@ section.content {
     color: #F44336;
 }
 
-.form-group .form-line {
+
+/* .form-group .form-line {
     width: 100%;
     position: relative;
     border-bottom: 1px solid #ddd;
@@ -7046,7 +7047,7 @@ section.content {
     -webkit-transition: 0.25s ease-in;
     transition: 0.25s ease-in;
     border-bottom: 2px solid #1f91f3;
-}
+} */
 
 .form-group .form-line .form-label {
     font-weight: normal;

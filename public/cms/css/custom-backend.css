@@ -100,3 +100,42 @@ fieldset[disabled] .btn {
 a:hover {
     text-decoration: none!important;
 }
+
+.tokenfield {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.tokenfield.focus {
+    -moz-transition: 0.25s ease-in;
+    -o-transition: 0.25s ease-in;
+    -webkit-transition: 0.25s ease-in;
+    transition: 0.25s ease-in;
+    border-bottom: 2px solid #1f91f3;
+}
+
+.form-group .form-line {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-group .form-line:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    bottom: -1px;
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -moz-transition: 0.25s ease-in;
+    -o-transition: 0.25s ease-in;
+    -webkit-transition: 0.25s ease-in;
+    transition: 0.25s ease-in;
+    /* border-bottom: 2px solid #1f91f3; */
+}

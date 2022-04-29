@@ -38,7 +38,8 @@ Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function (){
         Route::controller('PostController')->group(function (){
             Route::group(['prefix' => 'posts'], function(){
                 Route::get('/', 'postsPostsIndex');
-                Route::get('/create', 'postsCreateNewPost');
+                Route::get('/create', 'postsCreateNewPostPage');
+                Route::post('/create', 'postsCreateNewPost');
             });
             Route::get('/links', 'postsLinksIndex');
             Route::get('/categories', 'postsCategoriesIndex');
