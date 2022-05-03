@@ -21,37 +21,47 @@
         $(sources).each(function(){
             source.push({"id": this.id, "value": this.cat_name});
         });
-        
-        console.log(source);
-        
-        // var engine = new Bloodhound({
-        //     local: source,
-        //     datumTokenizer: function(d) {
-        //         return Bloodhound.tokenizers.whitespace(d.value);
-        //     },
-        //     queryTokenizer: Bloodhound.tokenizers.whitespace
-        // });
 
-        // engine.initialize();
-
-        $('#tokenfield').tokenfield({
-            autocomplete: {
-                source: source,
-                delay: 100
+        var engine = new Bloodhound({
+            local: source,
+            datumTokenizer: function(d) {
+                return Bloodhound.tokenizers.whitespace(d.value);
             },
-            showAutocompleteOnFocus: true
+            queryTokenizer: Bloodhound.tokenizers.whitespace
         });
-        
+
+        engine.initialize();
+
         $('#post_categories').tokenfield({
             typeahead: [null, { source: engine.ttAdapter() }]
         });
 
-        $('#post_categories').on('tokenfield:createtoken', function (event) {
+        $('#post_categories')
+        .on('tokenfield:createtoken', function (event) {
             var existingTokens = $(this).tokenfield('getTokens');
             $.each(existingTokens, function(index, token) {
                 if (token.value === event.attrs.value)
                     event.preventDefault();
             });
+            
+        })
+        .on('tokenfield:createdtoken', function (event) {
+            var existingTokenIds = $('input[name=post_categories_id]').val();
+            console.log(existingTokenIds);
+            existingTokenIds = existingTokenIds.split(',');
+            existingTokenIds.push(event.attrs.id);
+            $('input[name=post_categories_id]').val(existingTokenIds.join(','));
+            // if(existingTokenIds.includes(event.attrs.id + ', ')) event.preventDefault();
+            // else {
+            //     existingTokenIds.push(event.attrs.id);
+            //     $('input[name=post_categories_id]').val(JSON.stringify(existingTokenIds));
+            //     console.log(existingTokenIds);
+            // }
+        })
+        .on('tokenfield:removedtoken', function (event) {
+            var existingTokenIds = $('input[name=post_categories_id]').val();
+            existingTokenIds = existingTokenIds.replace(event.attrs.id + ',', '');
+            $('input[name=post_categories_id]').val(existingTokenIds);
         });
     </script>
 @endsection
@@ -93,7 +103,7 @@
                                     <label for="post_categories">Post Categories</label>
                                     <p class="font-12"><i><b>Note:</b> Leaving this section blank will automatically tag your post to "Uncategorized".</i></p>
                                     <div class="form-group">
-                                        <input type="text" value=""  name="post_categories_id" hidden>
+                                        <input type="text" value=""  name="post_categories_id">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="post_categories" name="post_categories" required>
                                         </div>
