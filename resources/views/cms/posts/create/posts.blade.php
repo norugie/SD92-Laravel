@@ -17,7 +17,7 @@
     <script>
         var sources = @json($categories->toArray(), JSON_HEX_TAG);
         var source = [];
-        
+
         $(sources).each(function(){
             source.push({"id": this.id, "value": this.cat_name});
         });
@@ -32,6 +32,16 @@
 
         engine.initialize();
 
+        function existingTokenIdFunction () {
+            var e = $('input[name=post_categories_id]').val();
+            e = e.split(',');
+            e = e.filter(function (e) {
+                if(e !== "" && e !== null) return e;
+            });
+
+            return e;
+        }
+
         $('#post_categories').tokenfield({
             typeahead: [null, { source: engine.ttAdapter() }]
         });
@@ -43,25 +53,16 @@
                 if (token.value === event.attrs.value)
                     event.preventDefault();
             });
-            
         })
         .on('tokenfield:createdtoken', function (event) {
-            var existingTokenIds = $('input[name=post_categories_id]').val();
-            console.log(existingTokenIds);
-            existingTokenIds = existingTokenIds.split(',');
-            existingTokenIds.push(event.attrs.id);
+            var existingTokenIds = existingTokenIdFunction();
+            existingTokenIds.push(JSON.stringify(event.attrs.id));
             $('input[name=post_categories_id]').val(existingTokenIds.join(','));
-            // if(existingTokenIds.includes(event.attrs.id + ', ')) event.preventDefault();
-            // else {
-            //     existingTokenIds.push(event.attrs.id);
-            //     $('input[name=post_categories_id]').val(JSON.stringify(existingTokenIds));
-            //     console.log(existingTokenIds);
-            // }
         })
         .on('tokenfield:removedtoken', function (event) {
-            var existingTokenIds = $('input[name=post_categories_id]').val();
-            existingTokenIds = existingTokenIds.replace(event.attrs.id + ',', '');
-            $('input[name=post_categories_id]').val(existingTokenIds);
+            var existingTokenIds = existingTokenIdFunction();
+            existingTokenIds.splice($.inArray(event.attrs.id + '', existingTokenIds), 1);
+            $('input[name=post_categories_id]').val(existingTokenIds.join(','));
         });
     </script>
 @endsection
@@ -103,9 +104,9 @@
                                     <label for="post_categories">Post Categories</label>
                                     <p class="font-12"><i><b>Note:</b> Leaving this section blank will automatically tag your post to "Uncategorized".</i></p>
                                     <div class="form-group">
-                                        <input type="text" value=""  name="post_categories_id">
+                                        <input type="text" value="" name="post_categories_id" hidden>
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="post_categories" name="post_categories" required>
+                                            <input type="text" class="form-control" id="post_categories" name="post_categories">
                                         </div>
                                     </div>
                                 </div>
