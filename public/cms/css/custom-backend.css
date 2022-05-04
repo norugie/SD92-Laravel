@@ -110,3 +110,16 @@ a:hover {
 .tokenfield.focus {
     border-bottom: 2px solid #1f91f3;
 }
+
+[title~="Save"] {
+    background-color: #607D8B!important;
+    border-color: #607D8B!important;
+}
+
+.tox .tox-button {
+    border-radius: 0px!important;
+}
+
+label {
+    font-weight: bold;
+}
