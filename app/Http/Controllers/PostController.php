@@ -27,7 +27,11 @@ class PostController extends Controller
 
     public function postsCreateNewPost (Request $request)
     {
-        dd($request);
+        $post = new Post;
+        $post->post_slug = "PST" . rand(1111111111,9999999999);
+        $post->post_title = $request->post_title;
+        $post->post_type = $request->post_opt_type;
+        dd($post);
     }
 
     // Categories
