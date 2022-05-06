@@ -6,10 +6,16 @@ use App\Models\User;
 use App\Models\Post;
 use App\Models\Link;
 use App\Models\Category;
+use App\Http\Controllers\FileUploadController;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function __construct ()
+    {
+        $this->file = new FileUploadController;
+    }
+
     // Posts
     public function postsPostsIndex ()
     {
@@ -56,16 +62,17 @@ class PostController extends Controller
         $post->department_id = session('schoolToPost');
 
         // Post thumbnail
-
-        $post->save();
+        $post_thumbnail = $this->file->uploadImage($request->file('post_thumbnail'), 'thumbnail');
+        echo $post_thumbnail;
+        // $post->save();
     
-        // Post categories
-        $categories = explode(',', $request->post_categories_id);
-        $post->categories()->attach($categories);
+        // // Post categories
+        // $categories = explode(',', $request->post_categories_id);
+        // $post->categories()->attach($categories);
 
-        echo $post->id . "<br>";
-        var_dump($categories);
-        dd($post);
+        // echo $post->id . "<br>";
+        // var_dump($categories);
+        // dd($post);
     }
 
     // Categories
