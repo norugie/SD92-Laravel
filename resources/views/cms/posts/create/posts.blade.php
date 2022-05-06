@@ -188,7 +188,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="post_desc">Post Description </label>
+                                    <label for="post_desc">Post Description</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea rows="2" class="form-control no-resize" id="post_desc" name="post_desc"></textarea>
@@ -198,7 +198,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="post_content" style="margin-bottom:10px;">Post Content *</label><br>
+                                    <label for="post_content" style="margin-bottom:10px;">Post Content</label><br>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea class="tinymce_editor" id="post_content" name="post_content">

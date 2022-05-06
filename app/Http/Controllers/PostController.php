@@ -27,9 +27,17 @@ class PostController extends Controller
 
     public function postsCreateNewPost (Request $request)
     {
-        $post = new Post;
+        // Validate content
+        $request->validate( 
+            [
+                'post_title' => 'required'
+            ],
+            [
+                'post_title.required' => 'This field is required.'
+            ]
+        );
 
-        // dd($request);
+        $post = new Post;
 
         // Post content
         $post->post_slug = "PST" . rand(1111111111,9999999999);
@@ -53,15 +61,11 @@ class PostController extends Controller
     
         // Post categories
         $categories = explode(',', $request->post_categories_id);
-        $this->addCategoriesToNewPost($post->id, $categories);
+        $post->categories()->attach($categories);
 
-         dd($post);
-    }
-
-    public function addCategoriesToNewPost (Int $id, Array $categories)
-    {
-        echo $id . "<br>";
+        echo $post->id . "<br>";
         var_dump($categories);
+        dd($post);
     }
 
     // Categories
