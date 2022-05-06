@@ -132,8 +132,11 @@ class AuthController extends Controller
                     ['username' => str_replace("@nisgaa.bc.ca", "", $user->getMail())]
                 );
 
+                $id = User::where('username', str_replace("@nisgaa.bc.ca", "", $user->getMail()))->value('id');
+                if(in_array($department, [3, 4, 5, 6]) ? $school = $department : $school = 2);
+
                 $tokenCache = new TokenCache();
-                $tokenCache->storeTokens($accessToken, $user, $role, $department);
+                $tokenCache->storeTokens($accessToken, $user, $id, $role, $department, $school);
 
                 return redirect($redirect);
             } catch (League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {

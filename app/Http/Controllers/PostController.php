@@ -28,10 +28,40 @@ class PostController extends Controller
     public function postsCreateNewPost (Request $request)
     {
         $post = new Post;
+
+        // dd($request);
+
+        // Post content
         $post->post_slug = "PST" . rand(1111111111,9999999999);
         $post->post_title = $request->post_title;
         $post->post_type = $request->post_opt_type;
-        dd($post);
+        $post->post_desc = $request->post_desc;
+        $post->post_content = $request->post_content;
+        $post->post_social = $request->post_sm_autopost;
+        $post->post_ssd = $request->post_ssd_autopost;
+        $post->post_ss = $request->post_ss_autopost;
+        $post->post_gcc = $request->post_gcc_autopost;
+        $post->post_nlc = $request->post_nlc_autopost;
+
+        // Post author
+        $post->user_id = session('userID');
+        $post->department_id = session('schoolToPost');
+
+        // Post thumbnail
+
+        $post->save();
+    
+        // Post categories
+        $categories = explode(',', $request->post_categories_id);
+        $this->addCategoriesToNewPost($post->id, $categories);
+
+         dd($post);
+    }
+
+    public function addCategoriesToNewPost (Int $id, Array $categories)
+    {
+        echo $id . "<br>";
+        var_dump($categories);
     }
 
     // Categories

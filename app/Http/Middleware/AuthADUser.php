@@ -35,6 +35,9 @@ class AuthADUser
             {
                 $viewData['userName'] = session('userName');
                 $viewData['userEmail'] = session('userEmail');
+                $viewData['userID'] = session('userID');
+                $viewData['userDepartment'] = session('userDepartment');
+                $viewData['schoolToPost'] = session('schoolToPost');
             }
 
             $page = explode('/', $request->path());
