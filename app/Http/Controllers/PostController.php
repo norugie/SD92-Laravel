@@ -17,7 +17,13 @@ class PostController extends Controller
         $this->file = new FileUploadController;
     }
 
-    // Posts
+    // ***-- Posts --*** //
+
+    /**
+     * Return data for /posts page
+     * 
+     * @return \Illuminate\View\View
+     */
     public function postsPostsIndex ()
     {
         $posts = Post::all()->sortByDesc('id');
@@ -25,6 +31,11 @@ class PostController extends Controller
         return view ( 'cms.posts.posts', compact('posts'));
     }
 
+    /**
+     * Return form data for /posts/create page
+     * 
+     * @return \Illuminate\View\View
+     */
     public function postsCreateNewPostPage ()
     {
         $categories = Category::where('cat_status', 'Active')->where('id', '!=', 2)->get();
@@ -32,6 +43,11 @@ class PostController extends Controller
         return view ( 'cms.posts.create.posts', compact('categories'));
     }
 
+    /**
+     * Handle process for creating new posts
+     *
+     * @param \Illuminate\Http\Request $request
+     */
     public function postsCreateNewPost (Request $request)
     {
         // Validate content
@@ -64,7 +80,7 @@ class PostController extends Controller
         $post->department_id = session('schoolToPost');
 
         // Post thumbnail
-        if($request->file('post_thumbnail')) $post->post_thumbnail = $this->file->uploadImage($request->file('post_thumbnail'), 'thumbnail');
+        if($request->file('file')) $post->post_thumbnail = $this->file->uploadImage($request, 'thumbnail');
 
         // Post save info
         $post->save();
@@ -82,13 +98,25 @@ class PostController extends Controller
             ->with('message', $message);
     }
 
-    // Categories
+    // ***-- Categories --*** //
+
+    /**
+     * Return data for /categories page
+     * 
+     * @return \Illuminate\View\View
+     */
     public function postsCategoriesIndex ()
     {
         return view ( 'cms.posts.categories' );
     }
 
-    // Links
+    // ***-- Links --*** //
+
+    /**
+     * Return data for /links page
+     * 
+     * @return \Illuminate\View\View
+     */
     public function postsLinksIndex ()
     {
         return view ( 'cms.posts.links' );

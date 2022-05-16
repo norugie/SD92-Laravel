@@ -1,6 +1,9 @@
 @extends ( 'cms.layout.layout' )
 
 @section ( 'custom-css' )
+    {{-- Additional header tags for page: /create --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/tinymce/skins/lightgray/skin.min.css">
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/bootstrap-tokenfield/dist/css/tokenfield-typeahead.min.css">
@@ -181,7 +184,7 @@
                                     <p class="font-12"><i><b>Note:</b> The max image size you can upload is 10 MB.</i></p>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="file" name="post_thumbnail" id="post_thumbnail" accept="image/x-png, image/jpeg">
+                                            <input type="file" name="file" id="post_thumbnail" accept="image/x-png, image/jpeg">
                                         </div>
                                     </div>
                                 </div>

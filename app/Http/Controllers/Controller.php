@@ -16,7 +16,8 @@ class Controller extends BaseController
     /**
      * Handle process for logging activity
      *
-     * @param String $user
+     * @param Int $user
+     * @param Int $department
      * @param String $description
      */
     public function inputLog(Int $user, Int $department, String $description)
@@ -35,6 +36,7 @@ class Controller extends BaseController
      */
     public function requestLog ()
     {
+        // Initialize Log object
         $log = new Log();
 
         $startDate = Carbon::now()->subDays(30);
