@@ -64,13 +64,14 @@ class PostController extends Controller
         $post->department_id = session('schoolToPost');
 
         // Post thumbnail
-        $post->post_thumbnail = $this->file->uploadImage($request->file('post_thumbnail'), 'thumbnail');
+        if($request->file('post_thumbnail')) $post->post_thumbnail = $this->file->uploadImage($request->file('post_thumbnail'), 'thumbnail');
 
         // Post save info
         $post->save();
     
         // Post categories
-        $categories = explode(',', $request->post_categories_id);
+        if($request->post_categories_id ? $categories = explode(',', $request->post_categories_id) : $categories = ['2']);
+        var_dump($categories);
         $post->categories()->attach($categories);
     }
 
