@@ -27,7 +27,7 @@ class PostController extends Controller
 
     public function postsCreateNewPostPage ()
     {
-        $categories = Category::where('cat_status', 'Active')->get();
+        $categories = Category::where('cat_status', 'Active')->where('id', '!=', 2)->get();
 
         return view ( 'cms.posts.create.posts', compact('categories'));
     }
@@ -48,7 +48,7 @@ class PostController extends Controller
         $post = new Post;
 
         // Post content
-        $post->post_slug = "PST" . date('YmdHis') . "-" . rand(11111111111111,99999999999999);
+        $post->post_slug = 'PST' . date('YmdHis') . '-' . rand(11111111111111,99999999999999);
         $post->post_title = $request->post_title;
         $post->post_type = $request->post_opt_type;
         $post->post_desc = $request->post_desc;
@@ -71,8 +71,15 @@ class PostController extends Controller
     
         // Post categories
         if($request->post_categories_id ? $categories = explode(',', $request->post_categories_id) : $categories = ['2']);
-        var_dump($categories);
         $post->categories()->attach($categories);
+
+        // Log activity
+        $message = 'A new post has been created: <b>' . $post->post_title . '</b>';
+        $this->inputLog(session('userID'), session('schoolToPost'), $message);
+        
+        return redirect('cms/posts/posts')
+            ->with('status', 'success')
+            ->with('message', $message);
     }
 
     // Categories
