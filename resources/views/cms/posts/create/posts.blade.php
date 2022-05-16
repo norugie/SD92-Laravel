@@ -5,7 +5,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/jquery-ui/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" id="u0" href="/plugins/tinymce/skins/lightgray/skin.min.css">
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/bootstrap-tokenfield/dist/css/tokenfield-typeahead.min.css">
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css">
 @endsection
