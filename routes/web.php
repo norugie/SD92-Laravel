@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 
@@ -31,11 +32,11 @@ Route::get('/signin', [AuthController::class, 'signin']);
 Route::get('/callback', [AuthController::class, 'callback']);
 Route::get('/signout', [AuthController::class, 'signout']);
 
-Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function (){
+Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function(){
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
-    Route::group(['prefix' => 'posts'], function() {
-        Route::controller('PostController')->group(function (){
+    Route::group(['prefix' => 'posts'], function(){
+        Route::controller('PostController')->group(function(){
             Route::group(['prefix' => 'posts'], function(){
                 Route::get('/', 'postsPostsIndex');
                 Route::get('/create', 'postsCreateNewPostPage');
@@ -44,5 +45,11 @@ Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function (){
             Route::get('/links', 'postsLinksIndex');
             Route::get('/categories', 'postsCategoriesIndex');
         }); 
+    });
+
+    Route::group(['prefix' => 'upload'], function(){
+        Route::controller('FileUploadController')->group(function(){
+            Route::post('/{type}', 'uploadImage');
+        });
     });
 });
