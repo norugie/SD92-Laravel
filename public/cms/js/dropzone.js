@@ -1,6 +1,16 @@
 (function() {
     'use strict';
 
+    // Dropzone Area
+    $('input[name=post_opt_type]:radio').change(function(ev) {
+        if (ev.currentTarget.value == 'Post') {
+            $('.dropzone-area').hide();
+        } else if (ev.currentTarget.value == 'Media') {
+            $('.dropzone-area').removeAttr('hidden');
+            $('.dropzone-area').show();
+        }
+    });
+
     // Configuring Dropzone
     Dropzone.autoDiscover = false;
 
@@ -35,7 +45,7 @@
 
                 // Remove image from server folder
                 $.ajax({
-                    url: '/cms/upload/media',
+                    url: '/cms/delete/media',
                     type: 'POST',
                     data: {
                         '_token': token,

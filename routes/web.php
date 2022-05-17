@@ -47,9 +47,8 @@ Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function(){
         }); 
     });
 
-    Route::group(['prefix' => 'upload'], function(){
-        Route::controller('FileUploadController')->group(function(){
-            Route::post('/{type}', 'uploadImage');
-        });
+    Route::controller('FileUploadController')->group(function(){
+        Route::post('/upload/{type}', 'uploadImage');
+        Route::post('/delete/{type}', 'deleteImage');
     });
 });

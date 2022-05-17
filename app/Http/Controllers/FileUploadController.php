@@ -24,10 +24,10 @@ class FileUploadController extends Controller
         return $file_location;
     }
 
-    public function deleteImage (File $file)
+    public function deleteImage (Request $request)
     {
-        // $filename = $request->filename;
-        // $path = public_path() . '/images/posts/' . $filename;
-        // if(File::exists( $path )) File::delete($path);
+        $filename = $request->filename;
+        $path = public_path() . '/images/media/' . $filename;
+        if(File::exists( $path )) File::delete($path);
     }
 }
