@@ -80,7 +80,7 @@ class PostController extends Controller
         $post->department_id = session('schoolToPost');
 
         // Post thumbnail
-        if($request->file('file')) $post->post_thumbnail = $this->file->uploadImage($request, 'thumbnail');
+        if($request->file('file')) $post->post_thumbnail = $this->file->uploadImage($request, 'thumbnails');
 
         // Post save info
         $post->save();

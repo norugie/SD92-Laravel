@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/bootstrap-tokenfield/dist/css/tokenfield-typeahead.min.css">
     <link rel="stylesheet" type="text/css" id="u0" href="/plugins/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css">
+
+    <link rel="stylesheet" type="text/css" id="u0" href="/plugins/dropzone/dropzone.css">
 @endsection
 
 @section ( 'custom-js' )
@@ -16,6 +18,9 @@
     <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script src="/plugins/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js"></script>
     <script src="/plugins/bootstrap-tokenfield/dist/typeahead.bundle.min.js"></script>
+
+    <script src="/plugins/dropzone/dropzone.js"></script>
+    <script src="/cms/js/dropzone.js"></script>
     <script>
         var sources = @json($categories->toArray(), JSON_HEX_TAG);
         var source = [];
@@ -210,7 +215,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row clearfix dropzone-area" hidden>
+                            <div class="row clearfix dropzone-area">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <p class="font-12"><i><b>Note:</b> This is an experimental feature. Uploading images over 1.5 MB may take a while. The max image size you can upload is 10 MB.</i></p>
                                     <div id="dropzone-gallery" class="dropzone">
@@ -221,7 +226,7 @@
                                             <h3>Drop images here or click to upload</h3>
                                         </div>
                                     </div>
-                                    <input type="text" id="image_name" name="image_name" value="" hidden>
+                                    <input type="text" id="image_name" name="image_name" value="">
                                 </div>
                             </div>
                             <div class="row clearfix">

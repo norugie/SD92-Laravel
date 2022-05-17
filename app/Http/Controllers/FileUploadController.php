@@ -12,7 +12,7 @@ class FileUploadController extends Controller
         // $file_location = json_encode(['location'=>"localhost:8000/images/posts/Annotation 2020-07-21 112834.png"]);
         $file = $request->file('file');
         // Set path for image
-        if ($type === 'editor' ? $url = '/images/posts' : $url = '/images/thumbnails');
+        if ($type === 'editor' ? $url = '/images/posts' : $url = '/images/' . $type);
         $path = url($url) . '/' . $file->getClientOriginalName();
         $file_name_to_store = $path;
 
