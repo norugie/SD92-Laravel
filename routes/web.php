@@ -59,6 +59,9 @@ Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function(){
                 Route::get('/{slug}/view', 'postsViewPost');
                 Route::get('/create', 'postsCreateNewPostPage');
                 Route::post('/create', 'postsCreateNewPost');
+
+                // View Post Reroute
+                Route::get('/{slug}', function ( String $slug ) { return redirect('/cms/posts/posts/' . $slug . '/view'); });
             });
         });
 
