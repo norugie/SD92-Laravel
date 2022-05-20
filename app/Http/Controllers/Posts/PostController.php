@@ -17,7 +17,7 @@ class PostController extends Controller
         $this->file = new FileUploadController;
     }
 
-    // ***-- Posts --*** //
+    // ***-- Posts - View --*** //
 
     /**
      * Return data for /posts page
@@ -32,6 +32,19 @@ class PostController extends Controller
     }
 
     /**
+     * Return data for /posts/{slug}/view page
+     * 
+     * @param String $slug
+     * @return \Illuminate\View\View
+     */
+    public function postsViewPost (String $slug)
+    {
+        
+        echo $slug;
+        // return view ( 'cms.posts.view.posts', compact('post'));
+    }
+
+    /**
      * Return form data for /posts/create page
      * 
      * @return \Illuminate\View\View
@@ -42,6 +55,8 @@ class PostController extends Controller
 
         return view ( 'cms.posts.create.posts', compact('categories'));
     }
+
+    // ***-- Posts - Create --*** //
 
     /**
      * Handle process for creating new posts
