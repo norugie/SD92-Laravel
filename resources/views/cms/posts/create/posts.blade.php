@@ -226,11 +226,11 @@
                                             <h3>Drop images here or click to upload</h3>
                                         </div>
                                     </div>
-                                    <input type="text" id="image_name" name="image_name" value="" hidden>
+                                    <input type="text" id="image_name" name="image_name" value="">
                                 </div>
                             </div>
                             <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
+                                <div class="col-md-12">
                                     <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
                                 </div>
                             </div>                           
