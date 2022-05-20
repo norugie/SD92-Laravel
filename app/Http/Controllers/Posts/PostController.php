@@ -29,6 +29,7 @@ class PostController extends Controller
         $posts = Post::all()->sortByDesc('id');
 
         return view ( 'cms.posts.posts', compact('posts'));
+        // dd($posts[394]->user);
     }
 
     /**
@@ -39,9 +40,8 @@ class PostController extends Controller
      */
     public function postsViewPost (String $slug)
     {
-        
-        echo $slug;
-        // return view ( 'cms.posts.view.posts', compact('post'));
+        $post = Post::where('post_slug', 'PST' . $slug)->first();
+        return view ( 'cms.posts.view.posts', compact('post'));
     }
 
     /**
