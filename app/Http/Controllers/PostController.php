@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Post;
 use App\Models\Link;
 use App\Models\Category;
+use App\Models\Media;
 use App\Http\Controllers\FileUploadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File; 
@@ -88,6 +89,18 @@ class PostController extends Controller
         // Post categories
         if($request->post_categories_id ? $categories = explode(',', $request->post_categories_id) : $categories = ['2']);
         $post->categories()->attach($categories);
+
+        // Post media gallery
+        if($request->image_name){
+            $gallery = explode(',', substr($request->image_name, 0, -1));
+
+            foreach($gallery as $image):
+                $media = new Media;
+                $media->media_name = $image;
+                $media->post()->associate($post);
+                $media->save();
+            endforeach;
+        }
 
         // Log activity
         $message = 'A new post has been created: <b>' . $post->post_title . '</b>';
