@@ -106,7 +106,7 @@
                         <li id="content" class="{{ Request::is( 'cms/content/*' ) ? 'active' : '' }}">
                             <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
                                 <i class="material-icons">view_day</i>
-                                <span>Site Content</span>
+                                <span>Site Base Content</span>
                             </a>
                             <ul class="ml-menu">
                                 <li id="about" class="{{ Request::is( 'cms/content/about' ) ? 'active' : '' }}">
@@ -213,7 +213,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="header">SITE INTERACTIONS</li>
+                        <li class="header">SITE SECTIONS</li>
                         <li id="curriculums" class="{{ Request::is( 'cms/web/curriculums/*' ) ? 'active' : '' }}">
                             <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
                                 <i class="material-icons">local_library</i>

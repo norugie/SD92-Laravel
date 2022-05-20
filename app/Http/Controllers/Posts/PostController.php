@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Posts;
 
-use App\Models\User;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\FileUploadController;
 use App\Models\Post;
-use App\Models\Link;
 use App\Models\Category;
 use App\Models\Media;
-use App\Http\Controllers\FileUploadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File; 
 
@@ -25,7 +24,7 @@ class PostController extends Controller
      * 
      * @return \Illuminate\View\View
      */
-    public function postsPostsIndex ()
+    public function postsIndex ()
     {
         $posts = Post::all()->sortByDesc('id');
 
@@ -109,29 +108,5 @@ class PostController extends Controller
         return redirect('cms/posts/posts')
             ->with('status', 'success')
             ->with('message', $message);
-    }
-
-    // ***-- Categories --*** //
-
-    /**
-     * Return data for /categories page
-     * 
-     * @return \Illuminate\View\View
-     */
-    public function postsCategoriesIndex ()
-    {
-        return view ( 'cms.posts.categories' );
-    }
-
-    // ***-- Links --*** //
-
-    /**
-     * Return data for /links page
-     * 
-     * @return \Illuminate\View\View
-     */
-    public function postsLinksIndex ()
-    {
-        return view ( 'cms.posts.links' );
     }
 }
