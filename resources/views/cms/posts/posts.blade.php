@@ -62,10 +62,10 @@
                                                         <i class="material-icons">more_horiz</i><span>OPTIONS</span> <span class="caret"></span>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">View Post</a>
-                                                        <a class="dropdown-item" href="#">Update Post Details</a>
+                                                        <a class="dropdown-item" href="/cms/posts/posts/{{ str_replace('PST', '', $post->post_slug) }}/view">View Post</a>
+                                                        <a class="dropdown-item" href="/cms/posts/posts/{{ str_replace('PST', '', $post->post_slug) }}/update">Update Post Details</a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item" href="#">Delete Post</a>
+                                                        <a class="dropdown-item" href="/cms/posts/posts/{{ str_replace('PST', '', $post->post_slug) }}/delete">Delete Post</a>
                                                     </div>
                                                 </div>
                                             </center>

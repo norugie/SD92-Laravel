@@ -1,11 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+// Auth and Base Controllers
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\UserController;
+
+// ***-- Posts Controllers --*** //
+// Posts
+use App\Http\Controllers\Posts\PostController;
+
+// Links
+use App\Http\Controllers\Posts\LinkController;
+
+// Links
+use App\Http\Controllers\Posts\CategoryController;
+
+// ***-- District Controllers --*** //
+
+// ***-- Sections Controllers --*** //
+
+// Miscellaneous Controllers
+use App\Http\Controllers\FileUploadController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,15 +53,21 @@ Route::group(['middleware' => 'authAD', 'prefix' => 'cms'], function(){
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
     Route::group(['prefix' => 'posts'], function(){
-        Route::controller('PostController')->group(function(){
+        Route::controller('Posts\PostController')->group(function(){
             Route::group(['prefix' => 'posts'], function(){
-                Route::get('/', 'postsPostsIndex');
+                Route::get('/', 'postsIndex');
                 Route::get('/create', 'postsCreateNewPostPage');
                 Route::post('/create', 'postsCreateNewPost');
             });
-            Route::get('/links', 'postsLinksIndex');
-            Route::get('/categories', 'postsCategoriesIndex');
-        }); 
+        });
+
+        Route::controller('Posts\LinkController')->group(function(){
+            Route::get('/links', 'linksIndex');
+        });
+
+        Route::controller('Posts\CategoryController')->group(function(){
+            Route::get('/categories', 'categoriesIndex');
+        });
     });
 
     Route::controller('FileUploadController')->group(function(){
