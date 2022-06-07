@@ -351,6 +351,9 @@
         <script src="/cms/js/custom.js"></script>
         @yield( 'custom-js' )
 
+        {{-- SweetAlert setup --}}
+        @include('sweetalert::alert')
+
         <!-- END - Page Footer -->
     </body>
 </html>
