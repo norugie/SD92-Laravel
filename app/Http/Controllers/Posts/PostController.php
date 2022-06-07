@@ -8,7 +8,8 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Media;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File; 
+use Illuminate\Support\Facades\File;
+use Alert; 
 
 class PostController extends Controller
 {
@@ -27,9 +28,7 @@ class PostController extends Controller
     public function postsIndex ()
     {
         $posts = Post::all()->sortByDesc('id');
-
         return view ( 'cms.posts.posts', compact('posts'));
-        // dd($posts[394]->user);
     }
 
     /**
