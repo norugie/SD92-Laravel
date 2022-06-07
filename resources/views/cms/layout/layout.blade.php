@@ -336,7 +336,7 @@
         <script src="/plugins/jquery-datatable/skin/bootstrap/js/dataTables.responsive.bootstrap.js"></script>
         <script src="/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
 
-        {{-- JQuery DataTable Plugin Extras --}}
+        <!-- JQuery DataTable Plugin Extras -->
         <script src="/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
         <script src="/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
 
@@ -350,9 +350,6 @@
         <script src="/cms/js/admin.js"></script>
         <script src="/cms/js/custom.js"></script>
         @yield( 'custom-js' )
-
-        {{-- SweetAlert setup --}}
-        @include('sweetalert::alert')
 
         <!-- END - Page Footer -->
     </body>

@@ -9,7 +9,6 @@ use App\Models\Category;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use Alert; 
 
 class PostController extends Controller
 {
@@ -51,7 +50,6 @@ class PostController extends Controller
     public function postsCreateNewPostPage ()
     {
         $categories = Category::where('cat_status', 'Active')->where('id', '!=', 2)->get();
-
         return view ( 'cms.posts.create.posts', compact('categories'));
     }
 
