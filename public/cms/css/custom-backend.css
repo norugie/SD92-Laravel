@@ -123,3 +123,7 @@ a:hover {
 label {
     font-weight: bold;
 }
+
+.swal2-select {
+    display: none!important;
+}

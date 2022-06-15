@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+Use Alert;
 
 class PostController extends Controller
 {
@@ -27,6 +28,10 @@ class PostController extends Controller
     public function postsIndex ()
     {
         $posts = Post::all()->sortByDesc('id');
+        // example:
+        alert()->question('Are you sure?','You won\'t be able to revert this!')->showCancelButton('Cancel', '#aaa');
+
+
         return view ( 'cms.posts.posts', compact('posts'));
     }
 
