@@ -350,6 +350,7 @@
         <script src="/cms/js/admin.js"></script>
         <script src="/cms/js/custom.js"></script>
         @yield( 'custom-js' )
+        @include('sweetalert::alert')
 
         <!-- END - Page Footer -->
     </body>
