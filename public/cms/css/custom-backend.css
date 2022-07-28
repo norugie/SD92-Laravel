@@ -127,3 +127,16 @@ label {
 .swal2-select {
     display: none!important;
 }
+
+.swal2-confirm {
+    display: none!important;
+}
+
+.swal2-close:focus {
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.dataTables_filter input {
+    width: 250px!important;
+}

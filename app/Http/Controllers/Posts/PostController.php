@@ -9,7 +9,6 @@ use App\Models\Category;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-Use Alert;
 
 class PostController extends Controller
 {
@@ -28,9 +27,6 @@ class PostController extends Controller
     public function postsIndex ()
     {
         $posts = Post::all()->sortByDesc('id');
-        // example:
-        alert()->question('Are you sure?','You won\'t be able to revert this!')->showCancelButton('Cancel', '#aaa');
-
 
         return view ( 'cms.posts.posts', compact('posts'));
     }
@@ -122,8 +118,8 @@ class PostController extends Controller
         $message = 'A new post has been created: <b>' . $post->post_title . '</b>';
         $this->inputLog(session('userID'), session('schoolToPost'), $message);
         
-        return redirect('cms/posts/posts')
-            ->with('status', 'success')
-            ->with('message', $message);
+        $this->alertDetails($message, 'success');
+
+        return redirect('cms/posts/posts');
     }
 }
