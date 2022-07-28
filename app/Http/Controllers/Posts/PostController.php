@@ -122,4 +122,8 @@ class PostController extends Controller
 
         return redirect('cms/posts/posts');
     }
+
+    // ***-- Posts - Update --*** //
+
+    // ***-- Posts - Archive --*** //
 }
