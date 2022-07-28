@@ -13,20 +13,14 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
         <!-- Bootstrap Core Css -->
-        <link href="/plugins/bootstrap-v4/css/bootstrap.css" rel="stylesheet">
-
-        <!-- Waves Effect Css -->
-        <link href="/plugins/node-waves/waves.css" rel="stylesheet" />
-
-        <!-- Animation Css -->
-        <link href="/plugins/animate-css/animate.css" rel="stylesheet" />
+        <link href="/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
         <!-- Bootstrap Select Css -->
         <link href="/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
         <!-- JQuery DataTable Css -->
-        <link href="/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
-        <link href="/plugins/jquery-datatable/skin/bootstrap/css/dataTables.responsive.bootstrap.css" rel="stylesheet">
+        <link href="/plugins/jquery-datatables/css/dataTables.bootstrap4.css" rel="stylesheet">
+        <link href="/plugins/jquery-datatables/css/responsive.bootstrap4.css" rel="stylesheet">
 
         <!-- Custom Css -->
         <link href="/cms/css/style.css" rel="stylesheet">
@@ -322,23 +316,20 @@
         <!-- Page Footer -->
         
         <!-- Bootstrap Core Js -->
-        <script src="/plugins/bootstrap-v4/js/bootstrap.js"></script>
+        <script src="/plugins/bootstrap/js/bootstrap.js"></script>
 
         <!-- Slimscroll Plugin Js -->
         <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
-        <!-- Waves Effect Plugin Js -->
-        <script src="/plugins/node-waves/waves.js"></script>
-
         <!-- Jquery DataTable Plugin Js -->
-        <script src="/plugins/jquery-datatable/jquery.dataTables.js"></script>
-        <script src="/plugins/jquery-datatable/skin/bootstrap/js/dataTables.responsive.js"></script>
-        <script src="/plugins/jquery-datatable/skin/bootstrap/js/dataTables.responsive.bootstrap.js"></script>
-        <script src="/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+        <script src="/plugins/jquery-datatables/js/jquery.dataTables.js"></script>
+        <script src="/plugins/jquery-datatables/js/dataTables.bootstrap4.js"></script>
+        <script src="/plugins/jquery-datatables/js/dataTables.responsive.js"></script>
+        <script src="/plugins/jquery-datatables/js/responsive.bootstrap4.js"></script>
 
-        <!-- JQuery DataTable Plugin Extras -->
-        <script src="/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-        <script src="/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+        {{-- JQuery DataTable Plugin Extras --}}
+        <script src="/plugins/jquery-datatables/extensions/dataTables.buttons.min.js"></script>
+        <script src="/plugins/jquery-datatables/extensions/buttons.html5.min.js"></script>
 
         <!-- Select Plugin Js -->
         <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>

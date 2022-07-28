@@ -103,10 +103,6 @@ $.AdminBSB.leftSideBar = {
             _this.setMenuHeight(false);
             _this.checkStatusForResize(false);
         });
-
-        //Set Waves
-        Waves.attach('.menu .list a', ['waves-block']);
-        Waves.init();
     },
     setMenuHeight: function(isFirstTime) {
         if (typeof $.fn.slimScroll != 'undefined') {
