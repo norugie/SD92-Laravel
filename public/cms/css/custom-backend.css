@@ -97,6 +97,45 @@ fieldset[disabled] .btn {
     opacity: .65;
 }
 
+#nav-id-tab,
+#nav-user-tab {
+    color: #495057!important;
+}
+
+.nav-tabs .nav-link.active {
+    border: none!important;
+    border-bottom: 2px solid #007bff!important;
+}
+
+.tab-pane>p {
+    margin-bottom: 8px!important;
+}
+
+.swal2-select {
+    display: none!important;
+}
+
+.swal2-cancel {
+    color: #555555!important;
+}
+
+.swal2-close:focus {
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.dataTables_filter input {
+    width: 250px!important;
+}
+
+.dropdown-menu.show {
+    top: 25px!important;
+}
+
+a[type="button"] {
+    -webkit-appearance: none;
+}
+
 a:hover {
     text-decoration: none!important;
 }
@@ -111,32 +150,10 @@ a:hover {
     border-bottom: 2px solid #1f91f3;
 }
 
-[title~="Save"] {
-    background-color: #607D8B!important;
-    border-color: #607D8B!important;
-}
-
 .tox .tox-button {
     border-radius: 0px!important;
 }
 
 label {
     font-weight: bold;
-}
-
-.swal2-select {
-    display: none!important;
-}
-
-.swal2-confirm {
-    display: none!important;
-}
-
-.swal2-close:focus {
-    outline: none!important;
-    box-shadow: none!important;
-}
-
-.dataTables_filter input {
-    width: 250px!important;
 }
